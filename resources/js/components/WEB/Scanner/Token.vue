@@ -202,7 +202,6 @@
         });
       },
       async likeReport(report) {
-        return;
         if(!this.$root.web3.account){
           this.$root.connectWallet();
           return;
@@ -221,7 +220,6 @@
         this.loading.like = false;
       },
       async dislikeReport(report) {
-        return;
         if(!this.$root.web3.account){
           this.$root.connectWallet();
           return;
@@ -243,7 +241,6 @@
         return !this.comments[i] || this.comments[i].length < 3;
       },
       async comment(report, i) {
-        return;
         if(!this.$root.web3.account){
           this.$root.connectWallet();
           return;
@@ -258,7 +255,6 @@
         this.loading.comment = false;
       },
       setControvesy(i) {
-        return;
         if(!this.$root.web3.account){
           this.$root.connectWallet();
           return;
