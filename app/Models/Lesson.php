@@ -45,7 +45,7 @@ class Lesson extends Model
 
     public function getPreviewAttribute()
     {
-        if($this->type === 'audio') return '/storage/courses/'.$this->unit()->first()->course_id.'/audio/'.$this->attributes['preview'];
+        if($this->type === 'audio') return '/storage/audio/courses/'.$this->unit()->first()->course_id.'/'.$this->attributes['preview'];
         return $this->attributes['preview'];
     }
 

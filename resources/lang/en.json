@@ -132,6 +132,7 @@
         "note": "Note|Notes",
         "recommendation": "Here is the book that I recommend to read and get more advanced knowledge about this topic."
     },
+    "desktop.ini": 1,
     "games": {
         "play_now": "Play Now",
         "captain_scan_description": "You must help our Scan Captain to jump as high as possible on a range of different hand-drawn platforms.",
@@ -261,17 +262,17 @@
         "early_unstake_alert": "If you withdraw your funds before the end of the staking period, you will be penalized with 10% of your stake and you will lose the rewards.",
         "sure_to_continue": "Are you sure to continue?"
     },
-    "swap": {
+    "swap.txt": {
         "max": "Max",
         "balance": "Balance: :balance",
-        "buy_tax": "Buy tax: :tax %",
-        "sell_tax": "Sell tax: :tax %",
-        "select_token": "Select token",
-        "insufficient_balance": "Insufficient :symbol balance",
-        "swap": "Swap",
-        "approve": "Approve",
-        "slippage": "Slippage",
-        "transaction_confirmed": "Transacction confirmed!"
+        "buy_tax": "Kaufsteuer: :tax %",
+        "sell_tax": "Verkaufssteuer: :tax %",
+        "select_token": "Token ausw\u00e4hlen",
+        "insufficient_balance": "Unzureichendes :symbol Saldo",
+        "swap": "Tausch",
+        "approve": "Genehmigen",
+        "slippage": "Schlupf",
+        "transaction_confirmed": "Transaktion best\u00e4tigt!"
     },
     "tokenomics": {
         "blacklist1_0_title": "Blacklist 1.0",
@@ -419,5 +420,17 @@
             }
         },
         "attributes": []
+    },
+    "swap": {
+        "max": "Max",
+        "balance": "Balance: :balance",
+        "buy_tax": "Buy tax: :tax %",
+        "sell_tax": "Sell tax: :tax %",
+        "select_token": "Select token",
+        "insufficient_balance": "Insufficient :symbol balance",
+        "swap": "Swap",
+        "approve": "Approve",
+        "slippage": "Slippage",
+        "transaction_confirmed": "Transacction confirmed!"
     }
 }
