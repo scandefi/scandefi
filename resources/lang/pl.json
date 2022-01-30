@@ -128,6 +128,7 @@
         "note": "Notatka|Notatki",
         "recommendation": "Oto ksi\u0105\u017cka, kt\u00f3r\u0105 polecam do przeczytania i zdobycia bardziej zaawansowanej wiedzy na ten temat."
     },
+    "desktop.ini": 1,
     "games": {
         "play_now": "Graj Teraz",
         "captain_scan_description": "Musisz pom\u00f3c naszemu Kapitanowi Scan skaka\u0107 jak najwy\u017cej na wielu r\u00f3\u017cnych r\u0119cznie rysowanych platformach.",
@@ -255,17 +256,17 @@
         "description": "Uzyskaj zwrot SCAN w zale\u017cno\u015bci od kwoty SCAN, kt\u00f3r\u0105 postawisz na platformie.",
         "insert_valid_amount": "Prosz\u0119 wpisa\u0107 prawid\u0142ow\u0105 kwot\u0119"
     },
-    "swap": {
-        "max": "Maks.",
-        "balance": "Saldo: :balance",
-        "buy_tax": "Kup podatek: :tax %",
-        "sell_tax": "Sprzedaj podatek: :tax %",
-        "select_token": "Wybierz token",
-        "insufficient_balance": "Niewystarczaj\u0105ce saldo :symbol",
-        "swap": "Wymiana",
-        "approve": "Zatwierdzi\u0107",
-        "slippage": "Po\u015blizg",
-        "transaction_confirmed": "Transakcja potwierdzona!"
+    "swap.txt": {
+        "max": "Max",
+        "balance": "Balance: :balance",
+        "buy_tax": "Kaufsteuer: :tax %",
+        "sell_tax": "Verkaufssteuer: :tax %",
+        "select_token": "Token ausw\u00e4hlen",
+        "insufficient_balance": "Unzureichendes :symbol Saldo",
+        "swap": "Tausch",
+        "approve": "Genehmigen",
+        "slippage": "Schlupf",
+        "transaction_confirmed": "Transaktion best\u00e4tigt!"
     },
     "tokenomics": {
         "blacklist1_0_title": "Blacklist 1.0",
@@ -413,5 +414,17 @@
             }
         },
         "attributes": []
+    },
+    "swap": {
+        "max": "Maks.",
+        "balance": "Saldo: :balance",
+        "buy_tax": "Kup podatek: :tax %",
+        "sell_tax": "Sprzedaj podatek: :tax %",
+        "select_token": "Wybierz token",
+        "insufficient_balance": "Niewystarczaj\u0105ce saldo :symbol",
+        "swap": "Wymiana",
+        "approve": "Zatwierdzi\u0107",
+        "slippage": "Po\u015blizg",
+        "transaction_confirmed": "Transakcja potwierdzona!"
     }
 }

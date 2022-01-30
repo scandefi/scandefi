@@ -132,6 +132,7 @@
         "note": "Nota|Notas",
         "recommendation": "Aqu\u00ed est\u00e1 el libro que recomiendo para leer y obtener un conocimiento m\u00e1s avanzado sobre este tema."
     },
+    "desktop.ini": 1,
     "games": {
         "play_now": "Jugar ahora",
         "captain_scan_description": "Debes ayudar a nuestro Capit\u00e1n de la Exploraci\u00f3n a saltar lo m\u00e1s alto posible en una serie de plataformas diferentes dibujadas a mano.",
@@ -261,17 +262,17 @@
         "early_unstake_alert": "Si retiras los fondos antes de que finalice el periodo de staking, ser\u00e1s penalizado con un 10% de tu stake y no recibir\u00e1s las recompensas.",
         "sure_to_continue": "\u00bfSeguro que quieres continuar?"
     },
-    "swap": {
+    "swap.txt": {
         "max": "Max",
         "balance": "Balance: :balance",
-        "buy_tax": "Comisi\u00f3n de compra: :tax %",
-        "sell_tax": "Comisi\u00f3n de venta: :tax %",
-        "select_token": "Seleccionar token",
-        "insufficient_balance": "Insuficiente saldo de :symbol",
-        "swap": "Intercambiar",
-        "approve": "Aprobar",
-        "slippage": "Slippage",
-        "transaction_confirmed": "\u00a1Transacci\u00f3n confirmada!"
+        "buy_tax": "Kaufsteuer: :tax %",
+        "sell_tax": "Verkaufssteuer: :tax %",
+        "select_token": "Token ausw\u00e4hlen",
+        "insufficient_balance": "Unzureichendes :symbol Saldo",
+        "swap": "Tausch",
+        "approve": "Genehmigen",
+        "slippage": "Schlupf",
+        "transaction_confirmed": "Transaktion best\u00e4tigt!"
     },
     "tokenomics": {
         "blacklist1_0_title": "Blacklist 1.0",
@@ -419,5 +420,17 @@
             }
         },
         "attributes": []
+    },
+    "swap": {
+        "max": "Max",
+        "balance": "Balance: :balance",
+        "buy_tax": "Comisi\u00f3n de compra: :tax %",
+        "sell_tax": "Comisi\u00f3n de venta: :tax %",
+        "select_token": "Seleccionar token",
+        "insufficient_balance": "Insuficiente saldo de :symbol",
+        "swap": "Intercambiar",
+        "approve": "Aprobar",
+        "slippage": "Slippage",
+        "transaction_confirmed": "\u00a1Transacci\u00f3n confirmada!"
     }
 }
