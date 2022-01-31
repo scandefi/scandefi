@@ -123,7 +123,7 @@ class TokenController extends Controller
       $meta['rrss'] = $rrss;
 
       $user->update(['meta' => $meta]);
-      Notification::route('mail', 'davidosuna1987@gmail.com')->notify(new QuitTokenRequestNotification($token, $user, $request->message));
+      Notification::route('mail', ['davidosuna1987@gmail.com', 'scandeficontact@gmail.com'])->notify(new QuitTokenRequestNotification($token, $user, $request->message));
 
       return response()->json(['token' => $token, 'user' => $user, 'request' => $request->all()]);
     }
