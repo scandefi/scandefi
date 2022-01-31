@@ -6,9 +6,9 @@
       <div class="scanner-token-reporter">{{$root.shortenAddress(wallet, 5)}}</div>
     </div> -->
 
-    <input v-model="form.telegram" class="input m-t-15" pattern="@[A-Za-z]" placeholder="@your_telegram_user">
+    <input v-model="form.telegram" class="input m-t-15" :class="{'is-muted':loading}" pattern="@[A-Za-z]" placeholder="@your_telegram_user">
 
-    <textarea v-model="form.message" class="input textarea is-size-small m-t-20" rows="6" placeholder="Add your quit message"></textarea>
+    <textarea v-model="form.message" class="input textarea is-size-small m-t-20" :class="{'is-muted':loading}" rows="6" placeholder="Add your quit message"></textarea>
 
     <div class="sticky-button-container">
       <button class="button is-medium is-primary is-fullwidth m-t-50" :class="{'is-muted':disableActions}" @click.prevent="quit">{{trans('scanner.quit_token')}}</button>
@@ -81,6 +81,8 @@
         axios.post(`/tokens/${this.form.token.id}/quit`, this.form).then(response => {
           this.loading = false;
           this.$emit('loading', false);
+          this.$root.showToast('Quit request submitted correctly!');
+          this.$emit('close', true);
         }).catch(error => {
           console.info(error);
           this.$emit('loading', false);
