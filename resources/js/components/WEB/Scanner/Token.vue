@@ -42,7 +42,7 @@
 
         <div v-if="token.address !== $root.scan.contract" class="token-actions">
           <a class="button is-primary m-t-10" @click.prevent="report(token)">{{trans('blacklist.go_to_report')}}</a>
-          <a href="https://t.me/scandefigroup" target="_blank" class="button is-primary m-t-10">{{trans('scanner.quit_token')}}</a>
+          <a class="button is-primary m-t-10" @click.prevent="quit(token)">{{trans('scanner.quit_token')}}</a>
         </div>
       </section>
 
@@ -194,6 +194,9 @@
         delete simpletoken.reports;
         delete simpletoken.comments;
         this.$root.reportToken(simpletoken);
+      },
+      quit(token) {
+        this.$root.quitToken(token);
       },
       async getBscTokenInfo(address = null) {
         address = address ? address : this.$route.params.address;

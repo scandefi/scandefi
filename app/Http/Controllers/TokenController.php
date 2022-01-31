@@ -2,9 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use App\Models\Token;
 use App\Models\Report;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Notification;
+use App\Notifications\QuitTokenRequestNotification;
 
 class TokenController extends Controller
 {
@@ -85,7 +88,7 @@ class TokenController extends Controller
 
       if(!$token->firstreport) $token->update(['firstreport' => now()]);
       $token->update(['lastreport' => now()]);
-      
+
       return response()->json(['success' => true, 'report' => $report]);
     }
 
@@ -104,5 +107,24 @@ class TokenController extends Controller
     public function swappables()
     {
       return response()->json(['tokens' => Token::swappables()]);
+    }
+
+    public function quit(Token $token, Request $request)
+    {
+      $user = User::whereWallet($request->wallet)->first();
+      if(empty($user)) abort(404);
+
+      $token = Token::find($request->token['id']);
+      if(empty($token)) abort(404);
+
+      $meta = $user->meta;
+      $rrss = $meta->rrss ?? collect();
+      $rrss['telegram'] = $request->telegram;
+      $meta['rrss'] = $rrss;
+
+      $user->update(['meta' => $meta]);
+      Notification::route('mail', 'davidosuna1987@gmail.com')->notify(new QuitTokenRequestNotification($token, $user, $request->message));
+
+      return response()->json(['token' => $token, 'user' => $user, 'request' => $request->all()]);
     }
 }
