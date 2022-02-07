@@ -121,6 +121,7 @@ Vue.component('web-navbar', require('./components/WEB/Navbar.vue').default);
 Vue.component('web-index', require('./components/WEB/Index/Layout.vue').default);
 Vue.component('web-how-to-buy', require('./components/WEB/HowToBuy.vue').default);
 Vue.component('web-content-creators', require('./components/WEB/ContentCreators.vue').default);
+Vue.component('web-quit-token-form', require('./components/WEB/Report/Token/Quit/Form.vue').default);
 Vue.component('web-report-token-form', require('./components/WEB/Report/Token/Form.vue').default);
 Vue.component('web-report-wallet-form', require('./components/WEB/Report/Wallet/Form.vue').default);
 Vue.component('web-referral', require('./components/WEB/Referral.vue').default);
@@ -165,6 +166,7 @@ Vue.component('scan-staking-vault', require('./components/SCAN/Staking/Vault.vue
  */
 
 import ReportTokenModalForm from './components/WEB/Report/Token/ModalForm.vue';
+import QuitTokenModalForm from './components/WEB/Report/Token/Quit/ModalForm.vue';
 import ReportWalletModalForm from './components/WEB/Report/Wallet/ModalForm.vue';
 import NotificationModal from './components/WEB/Notification/Modal.vue';
 import TweetModal from './components/SCAN/Tweet/Modal.vue';
@@ -650,6 +652,22 @@ const app = new Vue({
         props: { token: token },
         events: {
           reported: token => {},
+        },
+        onCancel: () => {}
+      });
+    },
+    async quitToken(token = null) {
+      if(!this.walletConnected) await this.$root.connectWallet();
+
+      let vue = this;
+      vue.$buefy.modal.open({
+        parent: vue,
+        animation: 'none',
+        component: QuitTokenModalForm,
+        canCancel: true,
+        props: { wallet: vue.web3.account, token: token },
+        events: {
+          quit: token => {},
         },
         onCancel: () => {}
       });
