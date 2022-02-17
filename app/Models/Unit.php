@@ -40,7 +40,7 @@ class Unit extends Model
 
     /* HELPERS */
 
-    public function getSlugOptions()
+    public function getSlugOptions():SlugOptions
     {
         return SlugOptions::create()
                           ->generateSlugsFrom('title')

@@ -94,8 +94,8 @@ class Course extends Model
 
     public function getImageAttribute()
     {
-        if($this->attributes['image']) return asset('storage/images/courses/'.$this->id.'/'.$this->attributes['image']);
-        else return asset('storage/images/courses/poster-default.png');
+        if($this->attributes['image']) return asset('https://files.scandefi.net/images/courses/'.$this->id.'/'.$this->attributes['image']);
+        else return asset('https://files.scandefi.net/images/courses/poster-default.png');
         return null;
     }
 
@@ -137,7 +137,7 @@ class Course extends Model
         return $user->enrolls->pluck('id')->contains($this->id);
     }
 
-    public function getSlugOptions()
+    public function getSlugOptions():SlugOptions
     {
         return SlugOptions::create()
                           ->generateSlugsFrom('title')
