@@ -39,4 +39,26 @@ class TokenControllerTest extends TestCase
                     ->etc()
             );
     }
+
+    /**
+     * test_get_a_token_in_the_blacklist
+     *
+     * @return void
+     */
+    public function test_get_a_token_in_the_blacklist()
+    {
+        $token = '0x0487fe9ee79bb9312373aed2901dce58d76bd48a';  // SHIBA TRON
+
+        $response = $this->get('/api/tokens/' . $token . '/scanner');
+
+        $response
+            ->assertOk()
+            ->assertJson(
+                fn (AssertableJson $json) =>
+                $json
+                    ->has('token', 17)  // If token is, its length is 17
+                    ->has('reports')
+
+            );
+    }
 }
