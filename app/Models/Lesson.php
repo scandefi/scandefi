@@ -45,13 +45,13 @@ class Lesson extends Model
 
     public function getPreviewAttribute()
     {
-        if($this->type === 'audio') return '/storage/audio/courses/'.$this->unit()->first()->course_id.'/'.$this->attributes['preview'];
+        if($this->type === 'audio') return 'https://files.scandefi.net/courses/'.$this->unit()->first()->course_id.'/audio/'.$this->attributes['preview'];
         return $this->attributes['preview'];
     }
 
     /* HELPERS */
 
-    public function getSlugOptions()
+    public function getSlugOptions():SlugOptions
     {
         return SlugOptions::create()
                           ->generateSlugsFrom('title')

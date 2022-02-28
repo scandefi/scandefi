@@ -78,7 +78,7 @@
       </header>
       <div class="stc-content">
         <div class="stc-stakes">
-          <scan-staking-vault 
+          <scan-staking-vault
             v-for="vault in staking.vaults"
             :key="vault[0]"
             :vault="vault"
@@ -91,7 +91,7 @@
             @exited="exited">
           </scan-staking-vault>
         </div>
-        
+
         <footer class="stc-foot">
           <div class="stc-foot-container">
             <div class="stcf-info">
@@ -169,6 +169,7 @@
           decimals: this.tokenDecimals,
           allowance: 0,
           balance: 0,
+          id: 0,
         },
         staking: {
           address: this.stakingAddress,
@@ -252,9 +253,15 @@
           this.goGetAllowance();
           // this.getLockTime();
           this.getHighestAPR();
+          this.getTokenId();
         }else{
           this.walletDisconnected();
         }
+      },
+      async getTokenId() {
+        await axios.get(`/api/tokens/get-by-address/${this.tokenAddress}`).then(res => {
+          this.token.id = res.data.token.id;
+        });
       },
       goApprove() {
         this.approve();
@@ -262,7 +269,7 @@
       async goGetAllowance() {
         this.loading.stake = true;
         this.loading.allowance = true;
-        await this.getAllowance(); 
+        await this.getAllowance();
         this.loading.stake = false;
         this.loading.allowance = false;
       },
@@ -323,15 +330,14 @@
             let stakingaddress = this.staking.address;
 
             this.loading.stake = true;
-            // const web3 = new Web3(Web3.givenProvider);
             const web3 = new Web3(this.$root.web3.provider);
             const STAKING_CONTRACT = new web3.eth.Contract(stakingabi, stakingaddress);
-            const result = await STAKING_CONTRACT.methods.stake(this.amountToStake).send({ from: this.$root.web3.account }).then(result => {
+            await STAKING_CONTRACT.methods.stake(this.amountToStake).send({ from: this.$root.web3.account }).then(result => {
               this.getTokenBalance();
               this.getTotalStaked();
               this.staking.amount = null;
               this.loading.stake = false;
-              this.getAllVaultsByHolder();
+              this.getAllVaultsByHolder(result);
             }).catch(error => {
               console.info(error)
               this.loading.stake = false;
@@ -339,18 +345,37 @@
         //   }
         // });
       },
-      async getAllVaultsByHolder() {
+      async storeUserStaking(meta = null) {
+        if(!meta || !this.$root.authuser) return;
+
+        let form = {
+          token_id: this.token.id,
+          amount: parseFloat(meta.vault[2]/10**this.token.decimals),
+          staking_days: this.duration,
+          status: 'success',
+          transaction_id: meta.transaction.transactionHash,
+          meta: meta,
+        };
+
+        await axios.post(`/api/users/${this.$root.authuser.id}/stakings`, form).then(res => {
+          console.info(res.data);
+        }).catch(err => {
+          console.info(err);
+        });
+      },
+      async getAllVaultsByHolder(transaction = null) {
         this.loading.vaults = true;
         this.loading.rewards = true;
         let stakingabi = this.staking.abi;
         let stakingaddress = this.staking.address;
-        // const web3 = new Web3(Web3.givenProvider);
+
         const web3 = new Web3(this.$root.web3.provider);
         const STAKING_CONTRACT = new web3.eth.Contract(stakingabi, stakingaddress);
-        const result = await STAKING_CONTRACT.methods.getAllVaultsByHolder(this.$root.web3.account).call().then(result =>{
+        STAKING_CONTRACT.methods.getAllVaultsByHolder(this.$root.web3.account).call().then(result =>{
           let vaults = Object.values(result);
           vaults = [vaults[0], vaults[1], vaults[2]].reduce((a, b) => a.map((e,i) => [e,b[i]].flat()));
           this.staking.vaults = vaults;
+          if(transaction) this.storeUserStaking({ transaction:transaction, vault:vaults[vaults.length-1] });
           this.getCardRewards();
         }).catch(error => console.info(error));
 
@@ -366,11 +391,13 @@
         this.loading.totalstaked = false;
       },
       async getCardRewards() {
+        if(!this.staking.vaults.length) return;
+
         this.loading.rewards = true;
         for(let i in this.staking.vaults){
           await this.getAmountRewards(this.staking.vaults[i][2]).then(rewards => {
-            this.staking.vaults[i].push(rewards)
-            if(i === this.staking.vaults.length-1) this.loading.rewards = false;
+            this.staking.vaults[i].push(rewards);
+            if(i == this.staking.vaults.length-1) this.loading.rewards = false;
           });
         }
       },
@@ -393,16 +420,17 @@
 
         this.loading.highestAPR = false;
       },
-      restaked() {
+      restaked(data) {
         this.getAllVaultsByHolder();
         this.getTotalStaked();
       },
-      withdrawed() {
+      withdrawed(data) {
         this.getAllVaultsByHolder();
         this.getTokenBalance();
         this.getTotalStaked();
       },
-      exited() {
+      exited(data) {
+        console.info(data);
         this.getAllVaultsByHolder();
         this.getTokenBalance();
         this.getTotalStaked();

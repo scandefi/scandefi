@@ -9,13 +9,16 @@ use App\Models\UserStaking;
 
 class UserStakingController extends Controller
 {
-    public function create(User $user, Request $request) {
-        $staking = UserStaking::create(['user_id' => $user->id,
-                                        'token_id' => $request->token_id,
-                                        'amount' => $request->amount,
-                                        'staking_days' => $request->staking_days,
-                                        'status' => $request->status,
-                                        'transaction_id' => $request->transaction_id]);
+    public function store(User $user, Request $request) {
+        $staking = UserStaking::create([
+            'user_id' => $user->id,
+            'token_id' => $request->token_id,
+            'amount' => $request->amount,
+            'staking_days' => $request->staking_days,
+            'status' => $request->status,
+            'transaction_id' => $request->transaction_id,
+            'meta' => $request->meta,
+        ]);
 
         return response()->json(['success' => true, 'staking' => $staking]);
     }
@@ -39,11 +42,13 @@ class UserStakingController extends Controller
                 'status' => $request->status,
                 'transaction_id' => $request->transaction_id,
             ]);
-    
-            return response()->json(['success' => true, 'amount' => $request->amount, 
-                                     'staking_days' => $request->staking_days, 
-                                     'status' => $request->status, 
-                                     'transaction_id' => $request->transaction_id]);
+
+            return response()->json([
+                'success' => true, 'amount' => $request->amount,
+                'staking_days' => $request->staking_days,
+                'status' => $request->status,
+                'transaction_id' => $request->transaction_id,
+            ]);
         endif;
 
         return response()->json(['success' => false]);
@@ -60,7 +65,6 @@ class UserStakingController extends Controller
     }
 
     public function amountStakedByToken(User $user, Token $token) {
-        // dd($user->stakings()->whereTokenId($token->id)->sum('amount'));
         return $user->stakings()->whereTokenId($token->id)->sum('amount');
     }
 }

@@ -92,6 +92,12 @@ class TokenController extends Controller
       return response()->json(['success' => true, 'report' => $report]);
     }
 
+    public function getByAddress($address)
+    {
+      $token = Token::whereAddress($address)->first();
+      return response()->json(['token' => $token]);
+    }
+
     public function scanner($address)
     {
       $token = Token::whereAddress($address)->first();
