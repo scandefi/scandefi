@@ -58,6 +58,7 @@ Route::group(['prefix' => 'api'], function(){
   Route::get('scan/users/{wallet}/minigames/{minigame}/ranking/active', 'MinigamesApiController@userMinigameActiveRoundRanking');
   Route::get('scan/users/{wallet}/minigames/{minigame}/ranking/previous', 'MinigamesApiController@userMinigamePreviousRoundRanking');
 
+  Route::get('tokens/get-by-address/{address}', 'TokenController@getByAddress');
   Route::get('tokens/{address}/scanner', 'TokenController@scanner');
   Route::get('tokens/{address}/reports', 'TokenController@reports');
   Route::post('tokens/blacklist', 'TokenController@blacklist');
@@ -103,7 +104,7 @@ Route::group(['prefix' => 'api'], function(){
 
   Route::get('users/{user}/enrolls', 'UserController@enrolls');
 
-  Route::post('users/{user}/stakings', 'UserStakingController@create');
+  Route::post('users/{user}/stakings', 'UserStakingController@store');
   Route::get('users/{user}/stakings/{staking}', 'UserStakingController@get');
   Route::post('users/{user}/stakings/{staking}/update', 'UserStakingController@update');
   Route::delete('users/{user}/stakings/{staking}', 'UserStakingController@delete');

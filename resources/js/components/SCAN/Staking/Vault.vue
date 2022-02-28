@@ -165,14 +165,15 @@
         this.loading.actions = true;
         const web3 = new Web3(this.$root.web3.provider);
         const STAKING_CONTRACT = new web3.eth.Contract(this.staking.abi, this.staking.address);
-        const result = await STAKING_CONTRACT.methods.reStake([this.vaultObject.id]).send({ from: this.$root.web3.account }).then(result => {
+        await STAKING_CONTRACT.methods.reStake([this.vaultObject.id]).send({ from: this.$root.web3.account }).then(result => {
+          console.info(result)
           this.$emit('restaked', this.vaultObject);
         }).catch(error => {
           console.info(error)
           this.loading.restake = false;
           this.loading.actions = false;
         });
-        
+
       },
       async withdraw() {
         if(this.restakeButtonsDisabled) return;
@@ -182,14 +183,15 @@
         this.loading.actions = true;
         const web3 = new Web3(this.$root.web3.provider);
         const STAKING_CONTRACT = new web3.eth.Contract(this.staking.abi, this.staking.address);
-        const result = await STAKING_CONTRACT.methods.harvest([this.vaultObject.id]).send({ from: this.$root.web3.account }).then(result => {
-          this.$emit('withdrawed', this.vaultObject);
+        await STAKING_CONTRACT.methods.harvest([this.vaultObject.id]).send({ from: this.$root.web3.account }).then(result => {
+          let data = { vault:this.vaultObject, transaction:result };
+          this.$emit('withdrawed', data);
         }).catch(error => {
           console.info(error)
           this.loading.withdraw = false;
           this.loading.actions = false;
         });
-        
+
       },
       async exit() {
         if(this.earlyUnstakeButtonsDisabled) return;
@@ -210,8 +212,9 @@
             vue.loading.actions = true;
             const web3 = new Web3(vue.$root.web3.provider);
             const STAKING_CONTRACT = new web3.eth.Contract(vue.staking.abi, vue.staking.address);
-            const result = await STAKING_CONTRACT.methods.exit([vue.vaultObject.id]).send({ from: vue.$root.web3.account }).then(result => {
-              vue.$emit('exited', vue.vaultObject);
+            await STAKING_CONTRACT.methods.exit([vue.vaultObject.id]).send({ from: vue.$root.web3.account }).then(result => {
+              let data = { vault:vue.vaultObject, transaction:result };
+              vue.$emit('exited', data);
             }).catch(error => {
               console.info(error)
               vue.loading.exit = false;
@@ -227,7 +230,7 @@
           vue.loading.countdown = false;
           let diff = vue.vaultObject.time - moment().unix();
           let duration = moment.duration(diff*1000, 'milliseconds');
-      
+
           if(diff <= 0){
             clearInterval(unlockTime);
             vue.countdown.text = 'Ended';
