@@ -50,9 +50,9 @@
         <article v-for="report, i in reverseReports" :key="report.id" class="scanner-token-report">
           <div class="scanner-token-report-head">
             <div class="avatar-wallet">
-              <div v-if="report.meta.user.wallet" class="wallet-logo" style="width:27px;height:27px;overflow:hidden;"><img :src="`https://avatars.dicebear.com/api/identicon/${report.meta.user.wallet}.svg?colorLevel=300`" alt="Wallet avatar"></div>
-              <div v-else class="wallet-logo" :style="{color: $root.$randomColor({ luminosity: 'light' })}">{{report.meta.user.wallet.slice(-2)}}</div>
-              <div class="scanner-token-reporter">{{$root.shortenAddress(report.meta.user.wallet, 9)}}</div>
+              <div v-if="report && report.meta && report.meta.user && report.meta.user.wallet" class="wallet-logo" style="width:27px;height:27px;overflow:hidden;"><img :src="`https://avatars.dicebear.com/api/identicon/${report.meta.user.wallet}.svg?colorLevel=300`" alt="Wallet avatar"></div>
+              <!-- <div v-else class="wallet-logo" :style="{color: $root.$randomColor({ luminosity: 'light' })}">{{report.meta.user.wallet.slice(-2)}}</div> -->
+              <div v-if="report && report.meta && report.meta.user && report.meta.user.wallet" class="scanner-token-reporter">{{$root.shortenAddress(report.meta.user.wallet, 9)}}</div>
             </div>
             <div class="scanner-token-report-date has-text-grey">{{$root.formatDate(report.created_at)}}</div>
           </div>

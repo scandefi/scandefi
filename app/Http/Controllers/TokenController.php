@@ -82,7 +82,7 @@ class TokenController extends Controller
         'meta' => [
           'user' => auth()->user(),
           'token' => $request->token,
-          'complaints' => $request->complaints,
+          // 'complaints' => $request->complaints,
         ],
       ]);
 
