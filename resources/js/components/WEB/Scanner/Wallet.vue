@@ -23,7 +23,7 @@
             <a href="https://t.me/scandefigroup" target="_blank" class="button is-primary m-t-10">{{trans('scanner.quit_wallet')}}</a>
           </div>
         </section>
-        
+
         <section class="scanner-token-wallet-balances-container">
           <p class="is-size-5 m-b-30">{{trans('scanner.balances')}}</p>
           <article v-for="token in filteredWalletBalances" class="scanner-token-report" :key="token.contract_address">
@@ -35,9 +35,9 @@
       <section v-if="!$root.adminwallets.includes(wallet.address) && wallet.reports && wallet.reports.length" class="scanner-token-reports-container">
         <article v-for="report in reverseReports" class="scanner-token-report" :key="report.id">
           <div class="scanner-token-report-head">
-            <div v-if="report.meta.user.wallet" class="wallet-logo" style="width:27px;height:27px;overflow:hidden;"><img :src="`https://avatars.dicebear.com/api/identicon/${report.meta.user.wallet}.svg?colorLevel=300`" alt="Wallet avatar"></div>
-            <div v-else class="wallet-logo" :style="{color: $root.$randomColor({ luminosity: 'light' })}">{{report.meta.user.wallet.slice(-2)}}</div>
-            <div class="scanner-token-reporter">{{$root.shortenAddress(report.meta.user.wallet, 9)}}</div>
+            <div v-if="report && report.meta && report.meta.user && report.meta.user.wallet" class="wallet-logo" style="width:27px;height:27px;overflow:hidden;"><img :src="`https://avatars.dicebear.com/api/identicon/${report.meta.user.wallet}.svg?colorLevel=300`" alt="Wallet avatar"></div>
+            <!-- <div v-else class="wallet-logo" :style="{color: $root.$randomColor({ luminosity: 'light' })}">{{report.meta.user.wallet.slice(-2)}}</div> -->
+            <div v-if="report && report.meta && report.meta.user && report.meta.user.wallet" class="scanner-token-reporter">{{$root.shortenAddress(report.meta.user.wallet, 9)}}</div>
             <div class="m-l-20 scanner-token-report-wallet-types">
               <b-tooltip multilined label="The wallet sold a large number of tokens in a single movement, drawing a lot of liquidity" type="is-black" size="is-large" position="is-top"><i class="fas fa-fish m-x-2" :class="report.complaints.includes('whale') ? 'has-text-primary' : 'is-muted-dark'"></i></b-tooltip>
               <b-tooltip multilined label="The wallet bought and sold the token many times, creating volatility" type="is-black" size="is-large" position="is-top"><i class="fas fa-sync m-x-2" :class="report.complaints.includes('trader') ? 'has-text-warning' : 'is-muted-dark'"></i></b-tooltip>
@@ -125,7 +125,7 @@
       },
       selected(data) {
         if(data.item.address === this.wallet.address) return;
-        
+
         if(data.type === 'token'){
           this.$router.push({ name: 'scanner.token', params: { address: data.item.address } });
         }
