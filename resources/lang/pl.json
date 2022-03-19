@@ -254,7 +254,8 @@
         "re_stake": "Ponowna Stawka",
         "withdraw": "Wyp\u0142a\u0107",
         "description": "Uzyskaj zwrot SCAN w zale\u017cno\u015bci od kwoty SCAN, kt\u00f3r\u0105 postawisz na platformie.",
-        "insert_valid_amount": "Prosz\u0119 wpisa\u0107 prawid\u0142ow\u0105 kwot\u0119"
+        "insert_valid_amount": "Prosz\u0119 wpisa\u0107 prawid\u0142ow\u0105 kwot\u0119",
+        "consult": "Consult here the exact associated APR"
     },
     "swap.txt": {
         "max": "Max",

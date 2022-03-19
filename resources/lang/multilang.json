@@ -261,7 +261,8 @@
             "description": "Sie erhalten SCAN-Renditen je nach H\u00f6he des SCAN-Einsatzes, den Sie auf der Plattform t\u00e4tigen.",
             "insert_valid_amount": "Bitte g\u00fcltigen Betrag eingeben",
             "early_unstake_alert": "Wenn Sie Ihr Guthaben vor Ablauf der Einsatzperiode abheben, werden Sie mit 10% Ihres Einsatzes bestraft und verlieren die Pr\u00e4mien.",
-            "sure_to_continue": "Sind Sie sicher, dass Sie fortfahren wollen?"
+            "sure_to_continue": "Sind Sie sicher, dass Sie fortfahren wollen?",
+            "consult": "Consult here the exact associated APR"
         },
         "swap.txt": {
             "max": "Max",
@@ -685,7 +686,8 @@
             "description": "Get SCAN returns depending on the amount of SCAN that you stake on the platform.",
             "insert_valid_amount": "Please insert valid amount",
             "early_unstake_alert": "If you withdraw your funds before the end of the staking period, you will be penalized with 10% of your stake and you will lose the rewards.",
-            "sure_to_continue": "Are you sure to continue?"
+            "sure_to_continue": "Are you sure to continue?",
+            "consult": "Consult here the exact associated APR"
         },
         "swap.txt": {
             "max": "Max",
@@ -1121,7 +1123,8 @@
             "description": "Obtenga rendimientos de SCAN en funci\u00f3n de la cantidad de SCAN que ponga a hacer staking en la plataforma.",
             "insert_valid_amount": "Por favor, introduzca un importe v\u00e1lido",
             "early_unstake_alert": "Si retiras los fondos antes de que finalice el periodo de staking, ser\u00e1s penalizado con un 10% de tu stake y no recibir\u00e1s las recompensas.",
-            "sure_to_continue": "\u00bfSeguro que quieres continuar?"
+            "sure_to_continue": "\u00bfSeguro que quieres continuar?",
+            "consult": "Consulta aqu\u00ed los APR exactos asociados"
         },
         "swap.txt": {
             "max": "Max",
@@ -1551,7 +1554,8 @@
             "re_stake": "Ponowna Stawka",
             "withdraw": "Wyp\u0142a\u0107",
             "description": "Uzyskaj zwrot SCAN w zale\u017cno\u015bci od kwoty SCAN, kt\u00f3r\u0105 postawisz na platformie.",
-            "insert_valid_amount": "Prosz\u0119 wpisa\u0107 prawid\u0142ow\u0105 kwot\u0119"
+            "insert_valid_amount": "Prosz\u0119 wpisa\u0107 prawid\u0142ow\u0105 kwot\u0119",
+            "consult": "Consult here the exact associated APR"
         },
         "swap.txt": {
             "max": "Max",

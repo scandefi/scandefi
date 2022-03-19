@@ -24,4 +24,5 @@ return [
     //06-01-2022
     'early_unstake_alert' => 'If you withdraw your funds before the end of the staking period, you will be penalized with 10% of your stake and you will lose the rewards.',
     'sure_to_continue' => 'Are you sure to continue?',
+    'consult' => 'Consult here the exact associated APR',
 ];
