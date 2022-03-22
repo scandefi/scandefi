@@ -43,7 +43,7 @@ Route::group(['prefix' => 'api'], function(){
   Route::get('coingecko/tokens/{token}', 'CoingeckoController@token');
 
   Route::get('livecoinwatch/tokens/{token}/history/{start}/{end}', 'ApiController@history');
-  
+
   Route::get('twitter/tweets/{tweet}/metrics', 'TwitterController@tweetMetrics');
 
   Route::get('scan/minigames/{minigame}/ranking', 'MinigamesApiController@minigameRanking');
@@ -58,6 +58,7 @@ Route::group(['prefix' => 'api'], function(){
   Route::get('scan/users/{wallet}/minigames/{minigame}/ranking/active', 'MinigamesApiController@userMinigameActiveRoundRanking');
   Route::get('scan/users/{wallet}/minigames/{minigame}/ranking/previous', 'MinigamesApiController@userMinigamePreviousRoundRanking');
 
+  Route::get('tokens/get-by-address/{address}', 'TokenController@getByAddress');
   Route::get('tokens/{address}/scanner', 'TokenController@scanner');
   Route::get('tokens/{address}/reports', 'TokenController@reports');
   Route::post('tokens/blacklist', 'TokenController@blacklist');
@@ -101,12 +102,12 @@ Route::group(['prefix' => 'api'], function(){
   Route::get('categories/{course}/get', 'CategoryController@get');
   Route::get('categories/{slug}/get-by-slug', 'CategoryController@getBySlug');
 
-  Route::get('users/{user}/enrolls', 'UserController@enrolls');  
+  Route::get('users/{user}/enrolls', 'UserController@enrolls');
 
-  Route::post('users/{user}/stakings', 'UserStakingController@create');
+  Route::post('users/{user}/stakings', 'UserStakingController@store');
   Route::get('users/{user}/stakings/{staking}', 'UserStakingController@get');
   Route::post('users/{user}/stakings/{staking}/update', 'UserStakingController@update');
-  Route::delete('users/{user}/stakings/{staking}', 'UserStakingController@delete');  
+  Route::delete('users/{user}/stakings/{staking}', 'UserStakingController@delete');
 
   Route::get('users/{user}/tokens/{token}/staking/amount', 'UserStakingController@amountStakedByToken');
 
@@ -122,6 +123,7 @@ Route::group(['prefix' => 'api'], function(){
 Route::post('tokens/find-or-create', 'TokenController@findOrCreate');
 Route::post('tokens/update-or-create', 'TokenController@updateOrCreate');
 Route::post('tokens/{token}/report', 'TokenController@report');
+Route::post('tokens/{token}/quit', 'TokenController@quit');
 
 Route::post('wallets/find-or-create', 'WalletController@findOrCreate');
 Route::post('wallets/{wallet}/report', 'WalletController@report');
@@ -137,9 +139,9 @@ Route::post('languages/{language}', 'LanguageController@update');
   Route::post('courses/{course}/comment', 'CourseController@comment');
   Route::post('courses/{course}/subscribe', 'CourseController@subscribe');
   Route::post('comments/{comment}/likes/toggle', 'CommentController@likeToggle');
-  
+
   Route::post('lessons/{lesson}/comment', 'LessonController@comment');
-  
+
   Route::post('reports/{report}/likes', 'ReportController@like');
   Route::post('reports/{report}/dislikes', 'ReportController@dislike');
   Route::get('reports/{report}/comments', 'ReportController@comments');

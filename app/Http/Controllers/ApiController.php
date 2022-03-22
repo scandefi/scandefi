@@ -37,21 +37,21 @@ class ApiController extends Controller
     {
       $endpoint = 'https://api1.poocoin.app/tokens';
       $response = Http::get("{$endpoint}?search={$search}");
-      return $response->json(); 
+      return $response->json();
     }
 
     public function history($token, $start, $end)
     {
       $endpoint = 'https://http-api.livecoinwatch.com/coins/history/range';
       $response = Http::get("{$endpoint}?coin={$token}&start={$start}&end={$end}&currency=USD");
-      return $response->json(); 
+      return $response->json();
     }
 
     public function slippage($token)
     {
       $endpoint = 'https://slippage.scandefi.workers.dev';
       $response = Http::get("{$endpoint}?token={$token}");
-      return $response->json(); 
+      return $response->json();
     }
 
     public function find($search)

@@ -11,7 +11,7 @@
         <b-switch size="is-small">{{trans('staking.staked_only')}}</b-switch>
       </div>
     </nav>
-    
+
     <section class="scan-staking-list-container" :class="classtype">
       <scan-staking-card
         icon="octopus"
@@ -63,12 +63,6 @@
     },
 
     watch: {
-      '$root.web3.account': {
-        immediate: true,
-        handler(val) {
-          this.checkjma();
-        }
-      },
       'filters.layout': {
         inmediate: true,
         handler(val) {

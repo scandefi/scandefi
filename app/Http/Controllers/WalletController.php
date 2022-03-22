@@ -47,13 +47,13 @@ class WalletController extends Controller
           'user' => auth()->user(),
           'wallet' => $request->wallet,
           'token' => $token ? $token : null,
-          'complaints' => $request->complaints,
+          // 'complaints' => $request->complaints,
         ],
       ]);
 
       if(!$wallet->firstreport) $wallet->update(['firstreport' => now()]);
       $wallet->update(['lastreport' => now()]);
-      
+
       return response()->json(['success' => true, 'report' => $report]);
     }
 
