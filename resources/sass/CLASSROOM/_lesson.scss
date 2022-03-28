@@ -313,6 +313,10 @@
         }
       }
 
+      .previous-button{
+        font-size: 1.1rem;
+      }
+
       .next-button{
         font-size: 1.1rem;
       }
@@ -337,10 +341,10 @@
       .classroom-lesson-content-navbar{
         display: flex;
         align-items: center;
-        justify-content: flex-end;
+        justify-content: space-between;
 
         .button{
-          display: block;
+          display: inline-block;
           width: 100%;
         }
       }
