@@ -61,9 +61,10 @@
 
       <div class="classroom-lesson-content">
         <div class="classroom-lesson-content-html" v-html="filters.lesson.content"></div>
-        <div class="classroom-lesson-content-navbar">
-          <a :href="nextClassHref" class="next-button button is-primary" :disabled="!nextClassHref" @click.prevent="next">{{trans('classroom.next_class')}}</a>
-        </div>
+          <div class="classroom-lesson-content-navbar">
+            <a :href="previousClassHref" class="previous-button button is-primary" :disabled="!previousClassHref" @click.prevent="previous">{{trans('classroom.previous_class')}}</a>
+            <a :href="nextClassHref" class="next-button button is-primary" :disabled="!nextClassHref" @click.prevent="next">{{trans('classroom.next_class')}}</a>
+          </div>
       </div>
 
       <div class="classroom-lesson-tabs">
@@ -207,6 +208,19 @@
       submitCommentDisabled() {
         return !this.form.comment || this.form.comment.length < 3;
       },
+      previousLesson() {
+        let lessons = this.course.units.map(o => o.lessons).flat();
+        let index = lessons.map(o => o.id).indexOf(this.filters.lesson.id);
+        let previous = index - 1;
+        
+        while(lessons[previous] && !lessons[previous].opened) previous --;
+        
+        if(previous >= 0){
+          return lessons[previous];
+        }
+
+        return null;
+      },
       nextLesson() {
         let lessons = this.course.units.map(o => o.lessons).flat();
         let index = lessons.map(o => o.id).indexOf(this.filters.lesson.id);
@@ -219,6 +233,9 @@
         }
 
         return null;
+      },
+      previousClassHref() {
+        return this.previousLesson ? `/classroom/courses/${this.course.slug}/lessons/${this.previousLesson.id}` : null;
       },
       nextClassHref() {
         return this.nextLesson ? `/classroom/courses/${this.course.slug}/lessons/${this.nextLesson.id}` : null;
@@ -254,6 +271,9 @@
       },
       filename(path) {
         return path.substring(path.lastIndexOf('/') + 1);
+      },
+      previous() {
+        if(this.previousLesson) this.setLesson(this.previousLesson);
       },
       next() {
         if(this.nextLesson) this.setLesson(this.nextLesson);
