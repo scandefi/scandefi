@@ -24,4 +24,5 @@ return [
     //06-01-2022
     'early_unstake_alert' => 'Wenn Sie Ihr Guthaben vor Ablauf der Einsatzperiode abheben, werden Sie mit 10% Ihres Einsatzes bestraft und verlieren die Prämien.',
     'sure_to_continue' => 'Sind Sie sicher, dass Sie fortfahren wollen?',
+    'consult' => 'Consult here the exact associated APR',
 ];

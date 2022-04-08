@@ -129,6 +129,7 @@
             "notes_lesson": "Hinterlassen Sie Ihre Notizen zu dieser Lektion",
             "by": "Von",
             "next_class": "N\u00e4chster Kurs",
+            "previous_class": "Vorherige Kurs",
             "mean": "Durchschnitt|Durchschnitte",
             "note": "Anmerkung|Anmerkungen",
             "recommendation": "Hier ist das Buch, das ich empfehle, um mehr Wissen \u00fcber dieses Thema zu erhalten."
@@ -261,7 +262,8 @@
             "description": "Sie erhalten SCAN-Renditen je nach H\u00f6he des SCAN-Einsatzes, den Sie auf der Plattform t\u00e4tigen.",
             "insert_valid_amount": "Bitte g\u00fcltigen Betrag eingeben",
             "early_unstake_alert": "Wenn Sie Ihr Guthaben vor Ablauf der Einsatzperiode abheben, werden Sie mit 10% Ihres Einsatzes bestraft und verlieren die Pr\u00e4mien.",
-            "sure_to_continue": "Sind Sie sicher, dass Sie fortfahren wollen?"
+            "sure_to_continue": "Sind Sie sicher, dass Sie fortfahren wollen?",
+            "consult": "Consult here the exact associated APR"
         },
         "swap.txt": {
             "max": "Max",
@@ -553,6 +555,7 @@
             "notes_lesson": "Leave your notes about this lesson",
             "by": "By",
             "next_class": "Next class",
+            "previous_class": "Previous class",
             "mean": "Mean|Means",
             "note": "Note|Notes",
             "recommendation": "Here is the book that I recommend to read and get more advanced knowledge about this topic."
@@ -685,7 +688,8 @@
             "description": "Get SCAN returns depending on the amount of SCAN that you stake on the platform.",
             "insert_valid_amount": "Please insert valid amount",
             "early_unstake_alert": "If you withdraw your funds before the end of the staking period, you will be penalized with 10% of your stake and you will lose the rewards.",
-            "sure_to_continue": "Are you sure to continue?"
+            "sure_to_continue": "Are you sure to continue?",
+            "consult": "Consult here the exact associated APR"
         },
         "swap.txt": {
             "max": "Max",
@@ -989,6 +993,7 @@
             "notes_lesson": "Deja tus notas sobre esta lecci\u00f3n",
             "by": "Por",
             "next_class": "Pr\u00f3xima clase",
+            "previous_class": "Clase anterior",
             "mean": "Media|Medias",
             "note": "Nota|Notas",
             "recommendation": "Aqu\u00ed est\u00e1 el libro que recomiendo para leer y obtener un conocimiento m\u00e1s avanzado sobre este tema."
@@ -1121,7 +1126,8 @@
             "description": "Obtenga rendimientos de SCAN en funci\u00f3n de la cantidad de SCAN que ponga a hacer staking en la plataforma.",
             "insert_valid_amount": "Por favor, introduzca un importe v\u00e1lido",
             "early_unstake_alert": "Si retiras los fondos antes de que finalice el periodo de staking, ser\u00e1s penalizado con un 10% de tu stake y no recibir\u00e1s las recompensas.",
-            "sure_to_continue": "\u00bfSeguro que quieres continuar?"
+            "sure_to_continue": "\u00bfSeguro que quieres continuar?",
+            "consult": "Consulta aqu\u00ed los APR exactos asociados"
         },
         "swap.txt": {
             "max": "Max",
@@ -1421,6 +1427,7 @@
             "notes_lesson": "Zostaw swoje notatki dotycz\u0105ce tej lekcji",
             "by": "Przez",
             "next_class": "Nast\u0119pna klasa",
+            "previous_class": "Poprzednie klasa",
             "mean": "\u015arednia|\u015arednie",
             "note": "Notatka|Notatki",
             "recommendation": "Oto ksi\u0105\u017cka, kt\u00f3r\u0105 polecam do przeczytania i zdobycia bardziej zaawansowanej wiedzy na ten temat."
@@ -1551,7 +1558,8 @@
             "re_stake": "Ponowna Stawka",
             "withdraw": "Wyp\u0142a\u0107",
             "description": "Uzyskaj zwrot SCAN w zale\u017cno\u015bci od kwoty SCAN, kt\u00f3r\u0105 postawisz na platformie.",
-            "insert_valid_amount": "Prosz\u0119 wpisa\u0107 prawid\u0142ow\u0105 kwot\u0119"
+            "insert_valid_amount": "Prosz\u0119 wpisa\u0107 prawid\u0142ow\u0105 kwot\u0119",
+            "consult": "Consult here the exact associated APR"
         },
         "swap.txt": {
             "max": "Max",

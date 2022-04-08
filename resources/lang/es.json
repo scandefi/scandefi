@@ -128,6 +128,7 @@
         "notes_lesson": "Deja tus notas sobre esta lecci\u00f3n",
         "by": "Por",
         "next_class": "Pr\u00f3xima clase",
+        "previous_class": "Clase anterior",
         "mean": "Media|Medias",
         "note": "Nota|Notas",
         "recommendation": "Aqu\u00ed est\u00e1 el libro que recomiendo para leer y obtener un conocimiento m\u00e1s avanzado sobre este tema."
@@ -260,7 +261,8 @@
         "description": "Obtenga rendimientos de SCAN en funci\u00f3n de la cantidad de SCAN que ponga a hacer staking en la plataforma.",
         "insert_valid_amount": "Por favor, introduzca un importe v\u00e1lido",
         "early_unstake_alert": "Si retiras los fondos antes de que finalice el periodo de staking, ser\u00e1s penalizado con un 10% de tu stake y no recibir\u00e1s las recompensas.",
-        "sure_to_continue": "\u00bfSeguro que quieres continuar?"
+        "sure_to_continue": "\u00bfSeguro que quieres continuar?",
+        "consult": "Consulta aqu\u00ed los APR exactos asociados"
     },
     "swap.txt": {
         "max": "Max",
