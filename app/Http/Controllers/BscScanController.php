@@ -23,7 +23,7 @@ class BscScanController extends Controller
       $crawler = $client->request('GET', 'https://bscscan.com/token/'.$request->token.'#balances');
 
       $holders_selector = '#ContentPlaceHolder1_divSummary.container.space-bottom-2:nth-child(8) > div.row.mb-4:nth-child(1) > div.col-md-6.mb-3.mb-md-0:nth-child(1) > div.card.h-100 > div.card-body:nth-child(2) > div#ContentPlaceHolder1_tr_tokenHolders:nth-child(3) > div.row.align-items-center:nth-child(2) > div.col-md-8:nth-child(2) > div.d-flex.align-items-center > div.mr-3:nth-child(1)';
-      
+
       if(empty($crawler->filter($holders_selector)->getNode(0))) return response()->json(['success' => false, 'message' => 'Invalid BSC token address provided.']);
 
       $holders_text = $crawler->filter($holders_selector)->first()->text();
@@ -32,11 +32,11 @@ class BscScanController extends Controller
       $total_supply_selector = '#ContentPlaceHolder1_divSummary > div.row.mb-4 > div.col-md-6.mb-3.mb-md-0 > div > div.card-body > div.row.align-items-center > div.col-md-8.font-weight-medium > span.hash-tag.text-truncate';
       $total_supply_text = $crawler->filter($total_supply_selector)->first()->text();
       $total_supply = (int) str_replace(',', '', $total_supply_text);
-      
+
       $decimals_selector = '#ContentPlaceHolder1_trDecimals > div > div.col-md-8';
       $decimals_text = $crawler->filter($decimals_selector)->first()->text();
       $decimals = (int) $decimals_text;
-      
+
       $website_selector = '#ContentPlaceHolder1_tr_officialsite_1 > div > div.col-md-8 > a';
       $website = $crawler->filter($website_selector)->first()->text();
 
@@ -48,13 +48,13 @@ class BscScanController extends Controller
         $social_media[$social_name] = $social_url;
         //$node->text();
       });
-      
+
       return response()->json([
         'success' => true,
-        'holders' => $holders, 
-        'total_supply' => $total_supply, 
-        'decimals' => $decimals, 
-        'website' => $website, 
+        'holders' => $holders,
+        'total_supply' => $total_supply,
+        'decimals' => $decimals,
+        'website' => $website,
         'social_media' => $social_media
       ]);
     }
@@ -76,7 +76,7 @@ class BscScanController extends Controller
       //     "jsonrpc":"2.0",
       //     "method":"eth_getBalance",
       //     "params":[
-      //       "0xA07f671C65b3B66728EDffC9bD41839B3876EF69", 
+      //       "0xA07f671C65b3B66728EDffC9bD41839B3876EF69",
       //       "latest"
       //     ],
       //     "id":1
@@ -108,7 +108,7 @@ class BscScanController extends Controller
         "jsonrpc" => "2.0",
         "method" => "eth_getBalance",
         "params" => [
-          $wallet, 
+          $wallet,
 		      "latest"
         ],
         "id" => time()

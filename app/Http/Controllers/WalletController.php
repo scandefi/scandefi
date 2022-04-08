@@ -11,6 +11,8 @@ class WalletController extends Controller
 {
     public function findOrCreate(Request $request)
     {
+      // TODO: Regular expression to prevent sql injection
+
       $wallet = Wallet::whereAddress($request->address)->withCount('reports')->first();
       if($wallet) return response()->json(['stored' => false, 'wallet' => $wallet]);
 
