@@ -128,6 +128,7 @@
         "notes_lesson": "Hinterlassen Sie Ihre Notizen zu dieser Lektion",
         "by": "Von",
         "next_class": "N\u00e4chster Kurs",
+        "previous_class": "Vorherige Kurs",
         "mean": "Durchschnitt|Durchschnitte",
         "note": "Anmerkung|Anmerkungen",
         "recommendation": "Hier ist das Buch, das ich empfehle, um mehr Wissen \u00fcber dieses Thema zu erhalten."
@@ -260,7 +261,8 @@
         "description": "Sie erhalten SCAN-Renditen je nach H\u00f6he des SCAN-Einsatzes, den Sie auf der Plattform t\u00e4tigen.",
         "insert_valid_amount": "Bitte g\u00fcltigen Betrag eingeben",
         "early_unstake_alert": "Wenn Sie Ihr Guthaben vor Ablauf der Einsatzperiode abheben, werden Sie mit 10% Ihres Einsatzes bestraft und verlieren die Pr\u00e4mien.",
-        "sure_to_continue": "Sind Sie sicher, dass Sie fortfahren wollen?"
+        "sure_to_continue": "Sind Sie sicher, dass Sie fortfahren wollen?",
+        "consult": "Consult here the exact associated APR"
     },
     "swap.txt": {
         "max": "Max",

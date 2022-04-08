@@ -13,6 +13,8 @@ class TokenController extends Controller
 {
     public function findOrCreate(Request $request)
     {
+      // TODO: Regular expression to prevent sql injection
+
       $token = Token::whereAddress($request->address)->withCount('reports')->first();
       if($token) return response()->json(['stored' => false, 'token' => $token]);
 
@@ -31,6 +33,8 @@ class TokenController extends Controller
 
     public function updateOrCreate(Request $request)
     {
+      // TODO: Regular expression to prevent sql injection
+
       if($token = Token::whereAddress($request->address)->withCount('reports')->first()):
         $token->update([
           'name' => $request->name,

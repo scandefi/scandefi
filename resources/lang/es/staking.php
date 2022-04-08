@@ -24,4 +24,5 @@ return [
     //06-01-2022
     'early_unstake_alert' => 'Si retiras los fondos antes de que finalice el periodo de staking, serás penalizado con un 10% de tu stake y no recibirás las recompensas.',
     'sure_to_continue' => '¿Seguro que quieres continuar?',
+    'consult' => 'Consulta aquí los APR exactos asociados',
 ];

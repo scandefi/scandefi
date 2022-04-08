@@ -21,5 +21,6 @@ return [
     'withdraw' => 'Wypłać',
     'description' => 'Uzyskaj zwrot SCAN w zależności od kwoty SCAN, którą postawisz na platformie.',
     'insert_valid_amount' => 'Proszę wpisać prawidłową kwotę',
+    'consult' => 'Consult here the exact associated APR',
     //06-01-2022
 ];
