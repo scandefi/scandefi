@@ -74,7 +74,7 @@ return [
     'controversy' => 'Controversia|Controversias',
     'you_see' => 'Ya vera...',
     'education' => 'Educación',
-    'finance' => 'Finanza',
+    'finance' => 'Finanzas',
     'logout' => 'Cierre de sesión',
     'show_balance' => 'Mostrar saldo|Mostrar saldos',
     'language' => 'Idioma|Los idiomas',
