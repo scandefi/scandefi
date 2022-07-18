@@ -35,11 +35,11 @@
                 <img class="scan-slide" src="/images/partners/banners/coinmarketcap.png" alt="CoinMarketCap Scan DeFi partner">
               </a>
             </b-carousel-item>
-            <b-carousel-item>
+            <!-- <b-carousel-item>
               <a :href="`https://youtu.be/qlBlPRFtxfs?t=491`" class="is-flex" target="_blank">
                 <img class="scan-slide" src="/images/partners/banners/healthy-pockets.png" alt="Healthy Pockets Scan DeFi partner">
               </a>
-            </b-carousel-item>
+            </b-carousel-item> -->
             <b-carousel-item>
               <a :href="`https://youtu.be/lVj9lT44EHQ?t=496`" class="is-flex" target="_blank">
                 <img class="scan-slide" src="/images/partners/banners/buenos-dias-cripto.png" alt="Buenos días cripto Scan DeFi partner">

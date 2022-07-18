@@ -188,9 +188,9 @@
 
           <span style="flex-basis: 100%;height: 0;display: inline-block;"></span>
 
-          <a href="https://youtu.be/qlBlPRFtxfs?t=491" target="_blank" data-aos="zoom-in" data-aos-delay="100">
+          <!-- <a href="https://youtu.be/qlBlPRFtxfs?t=491" target="_blank" data-aos="zoom-in" data-aos-delay="100">
             <img class="scan-partner-img is-vertical" src="/images/partners/logos/healthy-pockets.png" alt="Healthy Pockets SCAN partner" style="height:110px;">
-          </a>
+          </a> -->
           <a href="https://www.youtube.com/channel/UC4-akFgu6Wb_IiQ9gsQvTHw" target="_blank" data-aos="zoom-in" data-aos-delay="200">
             <img class="scan-partner-img is-vertical" src="/images/partners/logos/buenos-dias-crypto.png" alt="Buenos días crypto SCAN partner" style="height:110px;">
           </a>
