@@ -302,9 +302,9 @@
           <a href="https://www.youtube.com/c/QuieroGanarOficial/videos" target="_blank" data-aos="zoom-in" data-aos-delay="2900">
             <img class="scan-partner-img is-vertical" src="/images/partners/logos/quiero-ganar.png" alt="Quiero ganar SCAN partner" style="height:110px;">
           </a>
-          <a href="https://www.youtube.com/c/CryptoBoyOfficial" target="_blank" data-aos="zoom-in" data-aos-delay="3000">
+          <!-- <a href="https://www.youtube.com/c/CryptoBoyOfficial" target="_blank" data-aos="zoom-in" data-aos-delay="3000">
             <img class="scan-partner-img is-vertical" src="/images/partners/logos/crypto-boy.png" alt="Crypto Boy SCAN partner" style="height:110px;">
-          </a>
+          </a> -->
           <a href="https://www.youtube.com/c/SatoshiFactory/videos" target="_blank" data-aos="zoom-in" data-aos-delay="3000">
             <img class="scan-partner-img is-vertical" src="/images/partners/logos/satoshi-factory.png" alt="Satoshi Factory SCAN partner" style="height:110px;">
           </a>

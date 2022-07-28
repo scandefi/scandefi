@@ -220,11 +220,11 @@
                 <img class="scan-slide" src="/images/partners/banners/quiero-ganar.png" alt="Quiero Ganar Scan DeFi partner">
               </a>
             </b-carousel-item>
-            <b-carousel-item>
+            <!-- <b-carousel-item>
               <a :href="`https://www.youtube.com/c/CryptoBoyOfficial`" class="is-flex" target="_blank">
                 <img class="scan-slide" src="/images/partners/banners/crypto-boy.png" alt="Crypto Boy Scan DeFi partner">
               </a>
-            </b-carousel-item>
+            </b-carousel-item> -->
             <b-carousel-item>
               <a :href="`https://www.youtube.com/c/SatoshiFactory/videos`" class="is-flex" target="_blank">
                 <img class="scan-slide" src="/images/partners/banners/satoshy-factory.png" alt="Satoshi Factory Scan DeFi partner">
